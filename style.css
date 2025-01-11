@@ -1,0 +1,102 @@
+/* Reset margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: darkgray;
+}
+
+/* Header Styles */
+header {
+  background-color: orange; /* Orange background for the navbar */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between links and image */
+  padding: 10px 20px;
+}
+
+.links ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.links ul li {
+  display: inline;
+}
+
+.links ul li a {
+  text-decoration: none;
+  color: white; /* White text for contrast */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.links ul li a:hover {
+  color: #000; /* Black text on hover */
+}
+
+.navbar img {
+  height: 50px;
+}
+section {
+  text-align: center;
+}
+.hero {
+  background-color: rgb(187, 54, 54);
+}
+.btn {
+  cursor: pointer;
+  color: blue ease;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+}
+.testimonials {
+  background-color: rgb(60, 45, 172);
+}
+footer {
+  text-align: center;
+  background-color: #333;
+  color: aliceblue;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .links ul {
+    flex-direction: column;
+    display: none; /* Initially hide menu for mobile */
+    background-color: orange; /* Match navbar background */
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+  }
+
+  .links ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
