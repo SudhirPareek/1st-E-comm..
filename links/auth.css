@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body.form-body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+/* Container Styling */
+.form-container {
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; /* Ensure forms wrap on smaller screens */
+}
+
+/* Toggle Tabs */
+input[type="radio"] {
+  display: none; /* Hide radio buttons */
+}
+
+label.form-label {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: bold;
+  background-color: #f3f3f3;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Active Tab Styling */
+input#signin-tab:checked + label[for="signin-tab"],
+input#signup-tab:checked + label[for="signup-tab"] {
+  background-color: #2575fc;
+  color: #fff;
+}
+
+/* Forms */
+.form {
+  padding: 20px;
+  display: none; /* Hide forms by default */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Show form when respective tab is checked */
+input#signin-tab:checked ~ .signin-form {
+  display: block;
+}
+
+input#signup-tab:checked ~ .signup-form {
+  display: block;
+}
+
+/* Form Headings */
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Input Focus Effect */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #2575fc;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2575fc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6a11cb;
+}
+
+/* Text Links */
+p.form-text {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+p.form-text label {
+  color: #2575fc;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
